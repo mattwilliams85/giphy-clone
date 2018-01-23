@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Exo');
+
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Exo'
+}
+
+.App {
+  width: 1040px;
+}
