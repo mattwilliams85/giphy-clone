@@ -7,6 +7,7 @@ export default class Count extends Component {
     const page = Math.floor((offset + 12) / 12)
     const lastPage = Math.floor(pagination.total_count / 12)
 
+    // Format number to include commas
     let total = null
     if (pagination.total_count) {
       const regex = /\B(?=(\d{3})+(?!\d))/g

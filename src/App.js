@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { SearchBar, GiphList, Pagination, Count } from './components'
 
+// Decided not to use Redux because it seemed like overkill
 class App extends Component {
   constructor(props) {
     super(props)
@@ -13,6 +14,7 @@ class App extends Component {
     }
   }
 
+  // there are better ways to store data, but this was the easiest to implement quickly
   setGiphState = (json, query, offset) => {
     const { pagination, data } = json
     const prevCache = this.state.cache
@@ -26,6 +28,7 @@ class App extends Component {
     })
   }
 
+  // Clearing the gifs provided a less jaring transition between pages
   clearGiphs = () =>  {
     this.setState({ data: []})
   }
@@ -62,6 +65,7 @@ class App extends Component {
     query = query.replace(/ /g, '+')
 
     clearGiphs()
+    // Use cache only if the query / offset being requested is already stored
     if (cache[query + offset]) return fetchCache(query, offset)
 
     const url = `http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${apiKey}&limit=12&offset=${offset}`

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './style.css'
 
+// Getting the randomly sized gifs to fit together was a bit of a challenge.
 export default class GiphList extends Component {
   render() {
     const { giphs } = this.props
